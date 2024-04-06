@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmunb0h7kpbse"]
+
+[ext_resource type="Texture2D" uid="uid://ca8g8n4u14cjt" path="res://assets/interfaces/arcs1.png" id="1_dtm81"]
+[ext_resource type="Shader" path="res://scenes/title_scene/arcs.gdshader" id="1_umorf"]
+[ext_resource type="Texture2D" uid="uid://dtmokl8h2oqqc" path="res://assets/interfaces/arcs2.png" id="3_2svvy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7cfyr"]
+shader = ExtResource("1_umorf")
+shader_parameter/zoom_factor = 2.0
+shader_parameter/speed = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hv4ls"]
+shader = ExtResource("1_umorf")
+shader_parameter/zoom_factor = 2.0
+shader_parameter/speed = 0.5
+
+[node name="TitleScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ArcsBack" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_7cfyr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dtm81")
+stretch_mode = 1
+
+[node name="ArcsFront" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_hv4ls")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2svvy")
+stretch_mode = 1
